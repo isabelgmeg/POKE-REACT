@@ -1,0 +1,68 @@
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 200px;
+    background: white;
+    color: currentColor;
+    text-decoration: none;
+    overflow: hidden;
+    transition-property: color;
+    transition-delay: 0.15s;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .1);
+  }
+  .card.hover {
+    color: white;
+    transition-delay: 0;
+  }
+  .card, .card__image, .card__image::after {
+    transition-duration: 0.4s;
+    transition-timing-function: 
+      cubic-bezier(0.51, 0.92, 0.24, 1);
+  }
+  
+  .card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transform-origin: top center;
+    transition-property: transform;
+    transition-delay: 0.15s;
+    width: fit-content;
+  }
+  .card__image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background: linear-gradient(30deg, 
+      rgba(26, 42, 99, .85), rgba(26, 42, 99, .5));
+    transition-property: opacity;
+    transition-delay: 0.15s;
+  }
+  .card.hover .card__image {
+    transition-delay: 0;
+  }
+  .card.hover .card__image::after {
+    opacity: 1;
+    transition-delay: 0;
+  }
+  .card__body {
+    position: relative;
+    padding: 2em;
+    transition-property: transform;
+    transition-delay: 0.15s;
+  }
+  .card.hover .card__body {
+    transition-delay: 0;
+  }
+  
